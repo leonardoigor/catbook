@@ -18,7 +18,11 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    alert(this.user + " " + this.password)
+    this.auth.autenticar(this.user, this.password)
+      .subscribe(() => {
+        console.log(this);
+
+      }, console.log)
   }
 
 }
